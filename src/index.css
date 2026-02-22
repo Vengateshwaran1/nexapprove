@@ -1,0 +1,398 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* NexApprove Brand Color Tokens */
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+}
+
+/* ============================================================
+   LIGHT MODE — NexApprove Design System
+   Primary Brand: Deep Blue (#1E3B8A → #3B82F6)
+   Backgrounds: White / Light gray
+   Status: Emerald (success), Rose (danger), Amber (warning)
+   ============================================================ */
+:root {
+  --radius: 0.625rem;
+
+  /* Core surfaces */
+  --background: #eff0ff;
+  --foreground: #0f172a;
+
+  /* Cards & popovers */
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+
+  /* Primary brand — NexApprove Blue */
+  --primary: #1e3b8a;
+  --primary-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: #f1f5f9;
+  --secondary-foreground: #1e293b;
+
+  /* Muted */
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+
+  /* Accent */
+  --accent: #f1f5f9;
+  --accent-foreground: #1e293b;
+
+  /* Destructive — Rose Red */
+  --destructive: #e11d48;
+
+  /* Borders & inputs */
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #3b82f6;
+
+  /* Charts */
+  --chart-1: #1e3b8a;
+  --chart-2: #3b82f6;
+  --chart-3: #10b981;
+  --chart-4: #f59e0b;
+  --chart-5: #ef4444;
+
+  /* Sidebar */
+  --sidebar: #f8fafc;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #1e3b8a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: #1e293b;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #3b82f6;
+
+  /* NexApprove Semantic Colors */
+  --brand: #3b82f6;
+  --brand-foreground: #ffffff;
+  --success: #10b981;
+  --success-foreground: #ffffff;
+  --warning: #f59e0b;
+  --warning-foreground: #ffffff;
+  --info: #475569;
+  --info-foreground: #ffffff;
+}
+
+/* ============================================================
+   DARK MODE — NexApprove Design System
+   Surface Elevation: Slate-900 (#0a0f1a) → Slate-850 (#1E293B)
+   Primary Brand: Blue-500 (#2B5FEE / #3B82F6)
+   Status: Emerald-500, Rose-500, Amber-400
+   ============================================================ */
+.dark {
+  /* Core surfaces — Slate-900 */
+  --background: #0a0f1a;
+  --foreground: #f1f5f9;
+
+  /* Cards — Slate-850 */
+  --card: #1e293b;
+  --card-foreground: #f1f5f9;
+  --popover: #1e293b;
+  --popover-foreground: #f1f5f9;
+
+  /* Primary brand — NexApprove Blue (brighter for dark mode) */
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+
+  /* Secondary — Slate-800 */
+  --secondary: #334155;
+  --secondary-foreground: #f1f5f9;
+
+  /* Muted — Slate-800 */
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+
+  /* Accent */
+  --accent: #334155;
+  --accent-foreground: #f1f5f9;
+
+  /* Destructive — Rose-500 */
+  --destructive: #f43f5e;
+
+  /* Borders & inputs — Slate-700 */
+  --border: #475569;
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #3b82f6;
+
+  /* Charts */
+  --chart-1: #3b82f6;
+  --chart-2: #2b5fee;
+  --chart-3: #10b981;
+  --chart-4: #fbbf24;
+  --chart-5: #f43f5e;
+
+  /* Sidebar */
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f1f5f9;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #f1f5f9;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #3b82f6;
+
+  /* NexApprove Semantic Colors */
+  --brand: #2b5fee;
+  --brand-foreground: #ffffff;
+  --success: #10b981;
+  --success-foreground: #ffffff;
+  --warning: #fbbf24;
+  --warning-foreground: #1e293b;
+  --info: #94a3b8;
+  --info-foreground: #0f172a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ============================================================
+   LOGIN PAGE — Theme-aware ambient effects
+   ============================================================ */
+
+/* ── Central Radial Glow ── */
+.login-glow {
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 50%,
+    rgba(59, 130, 246, 0.07) 0%,
+    rgba(30, 59, 138, 0.03) 40%,
+    transparent 70%
+  );
+}
+.dark .login-glow {
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 50%,
+    rgba(59, 130, 246, 0.12) 0%,
+    rgba(30, 59, 138, 0.06) 40%,
+    transparent 70%
+  );
+}
+
+/* ── Floating Orbs ── */
+.login-orb-1 {
+  background: linear-gradient(135deg, #93bbfd, #6da0f4);
+  opacity: 0.1;
+  animation: float 8s ease-in-out infinite;
+}
+.dark .login-orb-1 {
+  background: linear-gradient(135deg, #3b82f6, #1e3b8a);
+  opacity: 0.2;
+}
+
+.login-orb-2 {
+  background: linear-gradient(225deg, #a5b4fc, #93bbfd);
+  opacity: 0.08;
+  animation: float 10s ease-in-out infinite reverse;
+}
+.dark .login-orb-2 {
+  background: linear-gradient(225deg, #6366f1, #3b82f6);
+  opacity: 0.15;
+}
+
+/* ── Grid Overlay ── */
+.login-grid {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.5;
+}
+.dark .login-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  opacity: 1;
+}
+
+/* ── Card Glass ── */
+.login-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.85) 0%, rgba(241, 245, 249, 0.95) 100%);
+  backdrop-filter: blur(40px);
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+.dark .login-card {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.85) 0%, rgba(10, 15, 26, 0.95) 100%);
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* ── Shimmer Bar ── */
+.login-shimmer {
+  background: linear-gradient(90deg, transparent, #3b82f6, #6366f1, #3b82f6, transparent);
+}
+
+/* ── Divider Line ── */
+.login-divider-line {
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+}
+
+/* ── Submit Button ── */
+.login-submit-btn {
+  background: linear-gradient(135deg, #1e3b8a 0%, #3b82f6 100%);
+  box-shadow: 0 8px 24px -4px rgba(59, 130, 246, 0.25);
+}
+.login-submit-btn:hover {
+  box-shadow: 0 12px 32px -4px rgba(59, 130, 246, 0.35);
+}
+.dark .login-submit-btn {
+  box-shadow: 0 8px 24px -4px rgba(59, 130, 246, 0.2);
+}
+.dark .login-submit-btn:hover {
+  box-shadow: 0 12px 32px -4px rgba(59, 130, 246, 0.3);
+}
+
+/* ── Float Animation (used by orbs) ── */
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(20px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-15px, 15px) scale(0.95);
+  }
+}
+
+/* ============================================================
+   SUPER ADMIN — Dashboard & Layout styles
+   ============================================================ */
+
+/* ── Custom scrollbar ── */
+.sa-main-content::-webkit-scrollbar {
+  width: 6px;
+}
+.sa-main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sa-main-content::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+.sa-main-content::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* ── Nav link hover bar ── */
+.sa-nav-active {
+  position: relative;
+}
+.sa-nav-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  border-radius: 0 4px 4px 0;
+  background: var(--primary);
+}
+
+/* ── Stats card shimmer on hover ── */
+.sa-stats-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.04) 0%,
+    transparent 50%,
+    rgba(59, 130, 246, 0.02) 100%
+  );
+  transition: opacity 0.3s;
+}
+.sa-stats-card:hover::before {
+  opacity: 1;
+}
+
+/* ── Panel subtle border glow ── */
+.sa-panel {
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+.sa-panel:hover {
+  border-color: rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 24px -8px rgba(59, 130, 246, 0.06);
+}
+
+/* ── Sidebar ── */
+.sa-sidebar {
+  background: linear-gradient(180deg, var(--sidebar) 0%, var(--background) 100%);
+}
+.dark .sa-sidebar {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 1) 0%, rgba(10, 15, 26, 1) 100%);
+}
+
+/* ── Top Bar blur ── */
+.sa-topbar {
+  border-color: var(--border);
+}
+.dark .sa-topbar {
+  border-color: rgba(255, 255, 255, 0.06);
+}
